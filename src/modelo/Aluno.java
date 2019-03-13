@@ -7,6 +7,7 @@ public class Aluno {
 	String email;
 	NotasAlunos[] notas;
 	int posicaoNota = 0;
+	String curso;
 
 	Aluno(double matricula, String nome, boolean sexo, String email,int qtdNotas) {
 		this.matricula = matricula;
@@ -16,6 +17,13 @@ public class Aluno {
 		this.notas = new NotasAlunos[qtdNotas];
 	}
 	
+	double mediaNotas() {
+		double media = 0;
+		for(NotasAlunos n: notas) {
+			media += n.valorNota;
+		}
+		return media/notas.length;
+	}
 
 
 public String toString() {
