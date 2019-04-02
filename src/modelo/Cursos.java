@@ -1,5 +1,7 @@
 package modelo;
 
+import java.time.LocalDate;
+
 public class Cursos {
 	String nomeCurso;
 	String coordCurso;

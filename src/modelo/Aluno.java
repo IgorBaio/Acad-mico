@@ -1,21 +1,42 @@
 package modelo;
 
+import java.time.LocalDate;
+
 public class Aluno {
-	double matricula;
+	String matricula;
 	String nome;
 	boolean sexo;
 	String email;
 	NotasAlunos[] notas;
 	int posicaoNota = 0;
 	String curso;
+	static int qntAluno;
+	
+	static public LocalDate localDate = LocalDate.now();
+	static public int contAno = 1;
+	int ano = localDate.getYear();
 
-	Aluno(double matricula, String nome, boolean sexo, String email,int qtdNotas,String curso) {
-		this.matricula = matricula;
+	
+	
+	Aluno( String nome, boolean sexo, String email,int qtdNotas,String curso) {
+		
 		this.nome = nome;
 		this.sexo = sexo;
 		this.email = email;
 		this.notas = new NotasAlunos[qtdNotas];
 		this.curso = curso;
+		Aluno.qntAluno += 1;
+		
+		if(this.ano == localDate.getYear()) {
+			this.matricula = Integer.toString(this.ano)+"-"+Integer.toString(this.contAno);
+			this.contAno++;
+		}else {
+			this.contAno = 1;
+			this.ano = localDate.getYear();
+			this.matricula = Integer.toString(this.ano)+"-"+Integer.toString(this.contAno);
+			this.contAno++;
+		}
+		
 	}
 	
 	
@@ -29,6 +50,19 @@ public class Aluno {
 		return notas;
 		
 	}*/
+	
+	/*int qntAluno(Aluno aluno) {
+		int qnt = 0;
+		for(Aluno a: aluno) {
+			qnt++;
+			return qnt;
+		}
+		
+	}*/
+	public static int quantidadeAlunos() {
+		return Aluno.qntAluno;
+	}
+	
 	
 	double mediaNotas() {
 		double media = 0;
