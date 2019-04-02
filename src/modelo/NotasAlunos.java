@@ -1,8 +1,8 @@
 package modelo;
 
 public class NotasAlunos {
-	double valorNota;
-	double pesoNota;
+	public double valorNota;
+	public double pesoNota;
 	
 	NotasAlunos(double valorNota, double pesoNota) {
 		this.valorNota = valorNota;

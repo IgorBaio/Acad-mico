@@ -1,29 +1,31 @@
 package modelo;
 
+import java.util.ArrayList;
+
 import java.time.LocalDate;
 
 public class Aluno {
-	String matricula;
-	String nome;
-	boolean sexo;
-	String email;
-	NotasAlunos[] notas;
-	int posicaoNota = 0;
-	String curso;
-	static int qntAluno;
+	private String matricula;
+	public String nome;
+	public boolean sexo;
+	public String email;
+	private ArrayList<NotasAlunos> notas;
+	public String curso;
+	static private int qntAluno;
 	
 	static public LocalDate localDate = LocalDate.now();
 	static public int contAno = 1;
 	int ano = localDate.getYear();
-
+	
+	private double media;
 	
 	
-	Aluno( String nome, boolean sexo, String email,int qtdNotas,String curso) {
+	Aluno( String nome, boolean sexo, String email,String curso) {
 		
 		this.nome = nome;
 		this.sexo = sexo;
 		this.email = email;
-		this.notas = new NotasAlunos[qtdNotas];
+		this.notas = new ArrayList();
 		this.curso = curso;
 		Aluno.qntAluno += 1;
 		
@@ -40,36 +42,41 @@ public class Aluno {
 	}
 	
 	
-	
-	/*NotasAlunos[] preencheNota(NotasAlunos nota) {
-		if(posicaoNota < notas.length) {
-			this.notas[posicaoNota] = nota;
-			posicaoNota++;
-			return notas;
-		}
-		return notas;
-		
-	}*/
-	
-	/*int qntAluno(Aluno aluno) {
-		int qnt = 0;
-		for(Aluno a: aluno) {
-			qnt++;
-			return qnt;
-		}
-		
-	}*/
 	public static int quantidadeAlunos() {
 		return Aluno.qntAluno;
 	}
 	
 	
-	double mediaNotas() {
-		double media = 0;
+	public double mediaNotas() {
+		this.media = 0;
 		for(NotasAlunos n: notas) {
 			media += n.valorNota * n.pesoNota ;
 		}
-		return media/notas.length;
+		this.media =media/notas.size();
+		return this.media;
+	}
+	
+	public void insere(NotasAlunos nota) {
+		notas.add(nota);
+	}
+	
+	public int avaliacoes() {
+		return notas.size();
+	}
+	
+	public void situacaoAluno() {
+		if(notas.size()==0) {
+			System.out.println("Aluno sem Avaliação");
+		}else {
+			if(this.media >=6) {
+				System.out.println("Aluno Aprovado");
+			
+			}else {
+				System.out.println("Aluno Reprovado");
+			}
+			
+			
+		}
 	}
 	
 
