@@ -1,9 +1,9 @@
 package modelo;
 
 public class Orientador {
-	String nome;
-	boolean sexo;
-	String email;
+	private String nome;
+	private boolean sexo;
+	private String email;
 	
 	Orientador(String nome, boolean sexo, String email){
 		this.nome = nome;

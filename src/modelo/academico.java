@@ -1,8 +1,5 @@
 package modelo;
 
-import java.time.LocalDate;
-
-import java.util.Scanner;
 
 public class academico {
 
@@ -11,6 +8,9 @@ public class academico {
 		Aluno a2 = new Aluno("Ingu Baiu",true,"igorbaiosoares@gmail.com", "BSI");
 		Aluno a3 = new Aluno("Igu Baio",true,"igorbaiosoares@gmail.com", "BSI");
 		Aluno a4 = new Aluno("Highlander",true,"igorbaiosoares@gmail.com", "BSI");
+	
+		
+		
 
 		NotasAlunos n1 = new NotasAlunos(1, 2);
 		NotasAlunos n2 = new NotasAlunos(4, 2);
@@ -30,7 +30,7 @@ public class academico {
 		a1.insere(n1);
 		a1.insere(n2);
 		a1.insere(n3);
-		
+	
 		
 		a2.insere(n1);
 		a2.insere(n2);
@@ -43,18 +43,18 @@ public class academico {
 		a3.insere(n2);
 		
 		System.out.println();
-		System.out.println("Total de notas do aluno "+a1.nome+": "+a1.avaliacoes());
-		System.out.println("Média das notas do aluno "+a1.nome+": "+a1.mediaNotas());
+		System.out.println("Total de notas do aluno "+a1.getNome()+": "+a1.avaliacoes());
+		System.out.println("Média das notas do aluno "+a1.getNome()+": "+a1.mediaNotas());
 		a1.situacaoAluno();
 		System.out.println();
 		
-		System.out.println("Total de notas do aluno "+a2.nome+": "+a2.avaliacoes());
-		System.out.println("Média das notas do aluno "+a2.nome+": "+a2.mediaNotas());
+		System.out.println("Total de notas do aluno "+a2.getNome()+": "+a2.avaliacoes());
+		System.out.println("Média das notas do aluno "+a2.getNome()+": "+a2.mediaNotas());
 		a2.situacaoAluno();
 		System.out.println();
 		
-		System.out.println("Total de notas do aluno "+a3.nome+": "+a3.avaliacoes());
-		System.out.println("Média das notas do aluno "+a2.nome+": "+a3.mediaNotas());
+		System.out.println("Total de notas do aluno "+a3.getNome()+": "+a3.avaliacoes());
+		System.out.println("Média das notas do aluno "+a2.getNome()+": "+a3.mediaNotas());
 		a3.situacaoAluno();
 		System.out.println();
 		
