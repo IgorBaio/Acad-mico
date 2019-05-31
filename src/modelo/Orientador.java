@@ -1,18 +1,18 @@
 package modelo;
 
-public class Orientador {
-	private String nome;
-	private boolean sexo;
-	private String email;
+public class Orientador extends User{
 	
 	Orientador(String nome, boolean sexo, String email){
-		this.nome = nome;
-		this.sexo = sexo;
-		this.email = email;
+		super(nome,sexo,email);
 		
 	}
 	
 public String toString() {
-		return "Orientador:\n\tSr(a) " +this.nome+"\n\t"+"("+this.email+")";
+		return "Orientador:\n\tSr(a) " +this.getNome()+"\n\t"+"("+this.getEmail()+")";
 	}
+
+
+
+	
+
 }

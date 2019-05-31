@@ -4,14 +4,14 @@ import java.util.ArrayList;
 
 import java.time.LocalDate;
 
-public class Aluno {
+public class Aluno extends User {
 
 	private String matricula;
-	private String nome;
+	/*private String nome;
 	private boolean sexo;
-	private String email;
+	private String email;*/
 	private ArrayList<NotasAlunos> notas;
-	private String curso;
+	private Cursos curso;
 	static private int qntAluno;
 
 	static private LocalDate localDate = LocalDate.now();
@@ -20,11 +20,12 @@ public class Aluno {
 
 	private double media;
 
-	Aluno(String nome, boolean sexo, String email, String curso) {
+	Aluno(String nome, boolean sexo, String email, Cursos curso) {
 
-		this.nome = nome;
-		this.sexo = sexo;
-		this.email = email;
+		super(nome, sexo, email);
+		//this.nome = nome;
+		//this.setSexo(sexo);
+		//this.email = email;
 		this.notas = new ArrayList<NotasAlunos>();
 		this.curso = curso;
 		Aluno.qntAluno += 1;
@@ -82,19 +83,13 @@ public class Aluno {
 
 	
 
-	public String getNome() {
-		return nome;
-	}
-
-	public String getEmail() {
-		return email;
-	}
+	
 
 	public ArrayList<NotasAlunos> getNotas() {
 		return notas;
 	}
 
-	public String getCurso() {
+	public Cursos getCurso() {
 		return curso;
 	}
 
@@ -119,7 +114,11 @@ public class Aluno {
 	}
 
 	public String toString() {
-		return "Aluno:\n\tMat: " + this.matricula + "-" + this.nome + "\n" + "\t" + "(" + this.email + ")";
+		return "Aluno:\n\tMat: " + this.matricula + "-" + this.getNome() + "\n" + "\t" + "(" + this.getEmail() + ")";
 	}
+
+	
+
+	
 
 }
