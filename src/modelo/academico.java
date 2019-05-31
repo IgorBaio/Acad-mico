@@ -4,16 +4,10 @@ package modelo;
 public class academico {
 
 	public static void main(String[] args) {
-		Cursos c1 = new SuperiorAmplaConcorrencia("Bsi", "Emerson");
-		Cursos c2 = new SuperiorCota("Bsi", "Memerson");
-		Cursos c3 = new TecnicoConcomitante("TTI", "Luana");
-		Cursos c4 = new TecnicoIntegrado("Elt", "Rafael");
-		Cursos c5 = new TecnicoSubsequente("Design de moveis", "Joana");
-		
-		Aluno a1 = new Aluno("Igor Baio",true,"igorbaiosoares@gmail.com", c1);
-		Aluno a2 = new Aluno("Ingu Baiu",true,"igorbaiosoares@gmail.com", c1);
-		Aluno a3 = new Aluno("Igu Baio",true,"igorbaiosoares@gmail.com", c1);
-		Aluno a4 = new Aluno("Highlander",true,"igorbaiosoares@gmail.com", c1);
+		Aluno a1 = new Aluno("Igor Baio",true,"igorbaiosoares@gmail.com", "BSI");
+		Aluno a2 = new Aluno("Ingu Baiu",true,"igorbaiosoares@gmail.com", "BSI");
+		Aluno a3 = new Aluno("Igu Baio",true,"igorbaiosoares@gmail.com", "BSI");
+		Aluno a4 = new Aluno("Highlander",true,"igorbaiosoares@gmail.com", "BSI");
 	
 		
 		
@@ -71,24 +65,6 @@ public class academico {
 		
 		int totalDeAlunos = Aluno.quantidadeAlunos();
 		System.out.println("Total de "+totalDeAlunos+" alunos.");
-		
-		System.out.println();
-		
-		IdentificadorDeCurso.indentificar(c1);
-		System.out.println();
-		
-		IdentificadorDeCurso.indentificar(c2);
-		System.out.println();
-		
-		IdentificadorDeCurso.indentificar(c3);
-		System.out.println();
-		
-		IdentificadorDeCurso.indentificar(c4);
-		System.out.println();
-		
-		IdentificadorDeCurso.indentificar(c5);
-		System.out.println();
-		
 	}
 
 }
