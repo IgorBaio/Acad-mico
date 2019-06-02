@@ -5,9 +5,11 @@ public class SuperiorCota extends Cursos {
 	
 	SuperiorCota(String nomeCurso, String coordCurso) {
 		super(nomeCurso, coordCurso);
-		// TODO Auto-generated constructor stub
+		
 	}
 
+	
+	
 	@Override
 	public String getDescricao() {
 		
