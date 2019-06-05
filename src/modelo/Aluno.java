@@ -77,10 +77,6 @@ public class Aluno extends User implements FormaDeTratamento, Comparable<Aluno> 
 		return matricula;
 	}
 
-	
-
-	
-
 	public ArrayList<NotasAlunos> getNotas() {
 		return notas;
 	}
