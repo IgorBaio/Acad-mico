@@ -20,8 +20,16 @@ public class NotasAlunos {
 		this.pesoNota = pesoNota;
 	}
 
-	NotasAlunos(double valorNota, double pesoNota) {
-		this.valorNota = valorNota;
-		this.pesoNota = pesoNota;
+	NotasAlunos(double valorNota, double pesoNota) throws ExceptionNotas {
+		if(valorNota < 0 || valorNota>10) {
+			throw new ExceptionNotas("Nota Inválida");
+		}else {
+			this.valorNota = valorNota;
+			this.pesoNota = pesoNota;
+		}
+
 	}
+	
+	
+	
 }

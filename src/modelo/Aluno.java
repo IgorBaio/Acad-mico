@@ -4,12 +4,10 @@ import java.util.ArrayList;
 
 import java.time.LocalDate;
 
-public class Aluno extends User {
+public class Aluno extends User implements FormaDeTratamento, Comparable<Aluno> {
 
 	private String matricula;
-	/*private String nome;
-	private boolean sexo;
-	private String email;*/
+	
 	private ArrayList<NotasAlunos> notas;
 	private Cursos curso;
 	static private int qntAluno;
@@ -23,9 +21,7 @@ public class Aluno extends User {
 	Aluno(String nome, boolean sexo, String email, Cursos curso) {
 
 		super(nome, sexo, email);
-		//this.nome = nome;
-		//this.setSexo(sexo);
-		//this.email = email;
+		
 		this.notas = new ArrayList<NotasAlunos>();
 		this.curso = curso;
 		Aluno.qntAluno += 1;
@@ -113,6 +109,34 @@ public class Aluno extends User {
 		return media;
 	}
 
+	public String getId() {
+		if(isSexo() == true) {
+			return "Aluno ";
+		}else {
+			return "Aluna ";
+		}
+	}
+	
+	public String tratamento() {
+		//if(u.isSexo() == true) {
+			return getId()+this.getNome()  ;
+		//}else {
+			//return "Aluna"+this.getNome();
+		//}
+	}
+	
+	
+	@Override
+	public int compareTo(Aluno o) {
+		if(this.getMedia() < o.getMedia() ) {
+			return -1;
+		}
+		if(this.getMedia() > o.getMedia()) {
+			return 1;
+		}
+		return 0;
+	}
+	
 	public String toString() {
 		return "Aluno:\n\tMat: " + this.matricula + "-" + this.getNome() + "\n" + "\t" + "(" + this.getEmail() + ")";
 	}
