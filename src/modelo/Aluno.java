@@ -118,6 +118,58 @@ public class Aluno {
 		return media;
 	}
 
+<<<<<<< Updated upstream
+=======
+	public String getId() {
+		if(isSexo() == true) {
+			return "Aluno ";
+		}else {
+			return "Aluna ";
+		}
+	}
+	
+	public String tratamento() {
+		//if(u.isSexo() == true) {
+			return getId()+this.getNome()  ;
+		//}else {
+			//return "Aluna"+this.getNome();
+		//}
+	}
+	
+	
+	@Override
+	public int compareTo(Aluno o) {
+		if(this.getMedia() < o.getMedia() ) {
+			return -1;
+		}
+		if(this.getMedia() > o.getMedia()) {
+			return 1;
+		}
+		return 0;
+	}
+	
+	
+	@Override
+	public boolean equals (Object obj) {
+		if(!(obj instanceof Aluno)) {
+			return false;
+		}
+		if(obj == this) {
+			return true;
+		}
+		Aluno a = (Aluno) obj;
+		if(a.getMatricula() == this.getMatricula()) {
+			return true;
+		}
+		return false;
+	}
+	
+	@Override
+	public int hashCode() {
+		return this.ano+Aluno.contMatricula;
+	}
+	
+>>>>>>> Stashed changes
 	public String toString() {
 		return "Aluno:\n\tMat: " + this.matricula + "-" + this.nome + "\n" + "\t" + "(" + this.email + ")";
 	}
