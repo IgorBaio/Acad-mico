@@ -1,6 +1,6 @@
 package modelo;
 
-public class User  {
+public class User {
 	private String nome;
 	private boolean sexo;
 	private String email;
@@ -24,5 +24,5 @@ public class User  {
 	}
 	
 	
-	
+
 }
